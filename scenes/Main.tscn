@@ -1,19 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Completinna.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Bullet.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Algo.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 520.729, 32.8206 )
+extents = Vector2( 970.79, 36.1613 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 309.217, 16.9456 )
 
 [node name="Main" type="Node2D"]
 
-[node name="Bullet" parent="." instance=ExtResource( 2 )]
-position = Vector2( 46.8507, 145.514 )
-SPEED = 200
-
 [node name="Completinna" parent="." instance=ExtResource( 1 )]
 position = Vector2( 523.94, 115.588 )
+
+[node name="Bullet" parent="." instance=ExtResource( 2 )]
+position = Vector2( 46.8507, 145.514 )
+
+[node name="Algo" parent="." instance=ExtResource( 3 )]
+position = Vector2( 788.927, 567.427 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2( 576.253, 661.442 )
@@ -31,4 +37,4 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource( 1 )
+shape = SubResource( 2 )

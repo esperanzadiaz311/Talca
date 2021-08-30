@@ -6,13 +6,23 @@ var GRAVITY = 400
 
 var _facing_right = true
 
+signal jumped(meh, owo)
+
 onready var playback = $AnimationTree.get("parameters/playback")
 
+var _err
 
 var Bullet = preload("res://scenes/Bullet.tscn")
 
 func _ready() -> void:
+	Manager.player = self
 	$AnimationTree.active = true
+	get_node("AnimationPlayer")
+	
+	_err = connect("mouse_entered", self, "_on_mouse_entered")
+	
+func _on_mouse_entered():
+	print("owo")
 
 func _physics_process(delta: float) -> void:
 	lineal_vel = move_and_slide(lineal_vel, Vector2.UP)
@@ -26,6 +36,7 @@ func _physics_process(delta: float) -> void:
 	
 	if on_floor and Input.is_action_just_pressed("jump"):
 		lineal_vel.y = -SPEED
+		emit_signal("jumped", "asdf", 123)
 	
 	if Input.is_action_just_pressed("fire"):
 		_fire()
