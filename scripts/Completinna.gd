@@ -59,6 +59,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			playback.travel("fall")
 	
+
 	if Input.is_action_just_pressed("left") and _facing_right:
 		_facing_right = false
 		scale.x = -1
