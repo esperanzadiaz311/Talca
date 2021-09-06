@@ -1,8 +1,8 @@
 extends CanvasLayer
 
 
-onready var start_button = $VBoxContainer/Start
-onready var quit_button = $VBoxContainer/Quit
+onready var start_button = $Panel/VBoxContainer/Start
+onready var quit_button = $Panel/VBoxContainer/Quit
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
